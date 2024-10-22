@@ -10,7 +10,7 @@ on:
 
 jobs:
   cypress:
-    runs-on: MacOS  
+    runs-on: macos-latest  
 
     steps:
       - name: Checkout code
