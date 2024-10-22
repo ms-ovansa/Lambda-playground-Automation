@@ -3,10 +3,10 @@ name: Cypress Tests
 on:
   push:
     branches:
-      - main  # Runs on push to the main branch
+      - main
   pull_request:
     branches:
-      - main  # Runs on pull requests to the main branch
+      - main
 
 jobs:
   cypress-run:
@@ -19,28 +19,15 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '22'
-
-    - name: Cache node_modules
-      uses: actions/cache@v3
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
-    - name: Cache Cypress binary
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/Cypress
-        key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-cypress-
+        node-version: '22' 
 
     - name: Install dependencies
       run: npm install
 
-    - name: Verify Cypress installed
+    - name: Install Cypress
+      run: npx cypress install 
+
+    - name: Verify Cypress installation
       run: npx cypress verify
 
     - name: Run Cypress tests
