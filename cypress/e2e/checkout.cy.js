@@ -26,7 +26,7 @@ describe('Lambda Playground Checkout Test', () => {
 
       
 
-cy.contains("Confirm Orders").should('be.visible');
+cy.contains("Confirm Order").should('be.visible');
 checkoutPage.confirmCheckout();
 cy.contains("Your order has been placed!").should('be.visible');
 
