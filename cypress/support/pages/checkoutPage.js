@@ -76,6 +76,7 @@ class checkoutPage {
       submitCheckout() {
         this.submitButton.click();
       }
+      
       confirmCheckout() {
         this.confirmButton.click();
       }

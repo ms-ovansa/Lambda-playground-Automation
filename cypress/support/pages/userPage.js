@@ -13,18 +13,18 @@ class userPage {
     }
   
     get phoneInput() {
-      return cy.get('#input-payment-telephone'); // Adjust the selector
+      return cy.get('#input-payment-telephone'); 
     }
   
     get passwordInput() {
-      return cy.get('#input-payment-password'); // Adjust the selector
+      return cy.get('#input-payment-password'); 
     }
   
     get confirmPasswordInput() {
-      return cy.get('#input-payment-confirm'); // Adjust the selector
+      return cy.get('#input-payment-confirm'); 
     }
     get companyInput() {
-        return cy.get('#input-payment-company'); // Adjust the selector
+        return cy.get('#input-payment-company'); 
       }
     get addressInput() {
       return cy.get('#input-payment-address-1'); 
@@ -64,8 +64,8 @@ class userPage {
       this.addressInput2.type(userData.address2);
       this.cityInput.type(userData.city);
       this.postcodeInput.type(userData.postcode);
-    this.countrySelect.select(userData.country); // Ensure country is from your user data
-      this.stateSelect.select(userData.state); // Ensure state is from your user data
+    this.countrySelect.select(userData.country); 
+      this.stateSelect.select(userData.state); 
     }
 )};
 }
